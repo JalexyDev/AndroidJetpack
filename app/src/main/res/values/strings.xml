@@ -1,3 +1,25 @@
 <resources>
-    <string name="app_name">Android Jetpack</string>
+    <string name="app_name">Состав числа</string>
+
+    <string name="understand">Понятно</string>
+    <string name="welcome_title">Состав числа</string>
+    <string name="welcome_description">Правила игры: перед вами будет три фигуры, две снизу и одна сверху. В двух из них будут числа. Необходимо, чтобы сумма чисел из двух нижних фигур была равна числу в верхней фигуре. Для этого нужно выбрать недостающее число из предложенных.\n\nПример: в верхнем круге число 7, в одном из нижних знак вопроса, а в другом число 4. Значит на месте вопросительного знака должно быть число 3, потому что 3 + 4 = 7</string>
+    <string name="welcome_logo_description">иконка</string>
+
+    <string name="choose_level_title">Выберите уровень:</string>
+    <string name="btn_text_test">Тестовый</string>
+    <string name="btn_text_easy">Легкий</string>
+    <string name="btn_text_normal">Средний</string>
+    <string name="btn_text_hard">Тяжелый</string>
+
+    <string name="game_answer_progress_text">Правильных ответов %s (минимум %s)</string>
+    <string name="game_question_mark">\?</string>
+
+    <string name="result_icon_description">Игра закончена</string>
+    <string name="result_required_answers_text">Необходимое количество правильных ответов: %s</string>
+    <string name="result_score_text">Ваш счёт: %s</string>
+    <string name="result_required_percentage_text">Нобходимый процент правильных ответов %s</string>
+    <string name="result_retry_btn_text">Попробовать снова</string>
+
+
 </resources>

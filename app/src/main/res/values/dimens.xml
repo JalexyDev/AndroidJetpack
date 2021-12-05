@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="xs_padding">12dp</dimen>
+
+    <dimen name="xxs_margin">8dp</dimen>
+    <dimen name="s_margin">16dp</dimen>
+    <dimen name="l_margin">32dp</dimen>
+
+    <dimen name="welcome_logo_height">150dp</dimen>
+
+    <dimen name="text_title_size">24sp</dimen>
+    <dimen name="text_description_size">16sp</dimen>
+    <dimen name="game_sum_size">144dp</dimen>
+    <dimen name="text_result_size">18sp</dimen>
+</resources>

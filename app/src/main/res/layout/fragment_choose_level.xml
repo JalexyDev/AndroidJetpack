@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".presentation.ChooseLevelFragment">
+
+    <TextView
+        android:id="@+id/title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/s_margin"
+        android:text="@string/choose_level_title"
+        android:textSize="@dimen/text_title_size"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/test_level_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/s_margin"
+        android:layout_marginBottom="@dimen/xxs_margin"
+        android:paddingVertical="@dimen/xs_padding"
+        android:text="@string/btn_text_test" />
+
+    <Button
+        android:id="@+id/easy_level_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/s_margin"
+        android:layout_marginBottom="@dimen/xxs_margin"
+        android:backgroundTint="@color/green_easy"
+        android:paddingVertical="@dimen/xs_padding"
+        android:text="@string/btn_text_easy" />
+
+    <Button
+        android:id="@+id/normal_level_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/s_margin"
+        android:layout_marginBottom="@dimen/xxs_margin"
+        android:backgroundTint="@color/yellow_normal"
+        android:paddingVertical="@dimen/xs_padding"
+        android:text="@string/btn_text_normal" />
+
+    <Button
+        android:id="@+id/hard_level_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/s_margin"
+        android:layout_marginBottom="@dimen/xxs_margin"
+        android:backgroundTint="@color/red_hard"
+        android:paddingVertical="@dimen/xs_padding"
+        android:text="@string/btn_text_hard" />
+
+</LinearLayout>
