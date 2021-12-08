@@ -1,4 +1,4 @@
-package com.jalexy.androidjetpack.presentation
+package com.jalexy.androidjetpack.presentation.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.jalexy.androidjetpack.R
 import com.jalexy.androidjetpack.databinding.FragmentChooseLevelBinding
-import com.jalexy.androidjetpack.databinding.FragmentGameFinishedBinding
 import com.jalexy.androidjetpack.domain.models.Level
 
 class ChooseLevelFragment : Fragment() {

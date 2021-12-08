@@ -1,4 +1,4 @@
-package com.jalexy.androidjetpack.presentation
+package com.jalexy.androidjetpack.presentation.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

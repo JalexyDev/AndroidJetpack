@@ -1,4 +1,4 @@
-package com.jalexy.androidjetpack.presentation
+package com.jalexy.androidjetpack.presentation.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,8 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.FragmentManager
-import com.jalexy.androidjetpack.R
-import com.jalexy.androidjetpack.databinding.FragmentGameBinding
 import com.jalexy.androidjetpack.databinding.FragmentGameFinishedBinding
 import com.jalexy.androidjetpack.domain.models.GameResult
 
@@ -21,7 +19,7 @@ class GameFinishedFragment : Fragment() {
         fun newInstance(result: GameResult): GameFinishedFragment =
             GameFinishedFragment().apply {
                 arguments = Bundle().apply {
-                    putSerializable(KEY_GAME_RESULT, result)
+                    putParcelable(KEY_GAME_RESULT, result)
                 }
             }
     }
@@ -30,13 +28,17 @@ class GameFinishedFragment : Fragment() {
     private val binding: FragmentGameFinishedBinding
         get() = _binding ?: throw RuntimeException("FragmentGameFinishedBinding is null")
 
+    private var result: GameResult? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         parseArgs()
     }
 
     private fun parseArgs() {
-        requireArguments().getSerializable(KEY_GAME_RESULT) as GameResult
+        requireArguments().getParcelable<GameResult>(KEY_GAME_RESULT)?.let{
+            result = it
+        }
     }
 
     override fun onCreateView(
@@ -57,6 +59,9 @@ class GameFinishedFragment : Fragment() {
                         retryGame()
                     }
                 })
+        binding.retryBtn.setOnClickListener {
+            retryGame()
+        }
     }
 
     private fun retryGame() {

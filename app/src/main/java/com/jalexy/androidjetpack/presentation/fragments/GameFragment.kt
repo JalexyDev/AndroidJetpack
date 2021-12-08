@@ -1,4 +1,4 @@
-package com.jalexy.androidjetpack.presentation
+package com.jalexy.androidjetpack.presentation.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -20,7 +20,7 @@ class GameFragment : Fragment() {
         fun newInstance(level: Level): GameFragment =
             GameFragment().apply {
                 arguments = Bundle().apply {
-                    putSerializable(KEY_LEVEL, level)
+                    putParcelable(KEY_LEVEL, level)
                 }
             }
     }
@@ -37,7 +37,9 @@ class GameFragment : Fragment() {
     }
 
     private fun parseArgs() {
-        level = requireArguments().getSerializable(KEY_LEVEL) as Level
+        requireArguments().getParcelable<Level>(KEY_LEVEL)?.let {
+            level = it
+        }
     }
 
     override fun onCreateView(
