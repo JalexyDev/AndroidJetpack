@@ -18,7 +18,8 @@
     <string name="result_icon_description">Игра закончена</string>
     <string name="result_required_answers_text">Необходимое количество правильных ответов: %s</string>
     <string name="result_score_text">Ваш счёт: %s</string>
-    <string name="result_required_percentage_text">Нобходимый процент правильных ответов %s</string>
+    <string name="result_required_percentage_text">Необходимый процент правильных ответов %s</string>
+    <string name="result_score_percentage_text">Ваш процент правильных ответов %s</string>
     <string name="result_retry_btn_text">Попробовать снова</string>
 
 

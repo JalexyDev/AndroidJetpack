@@ -1,66 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
 
-    <androidx.core.widget.NestedScrollView
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:context=".presentation.fragments.WelcomeFragment">
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/welcome_logo_height"
+                    android:layout_marginTop="@dimen/s_margin"
+                    android:contentDescription="@string/welcome_logo_description"
+                    android:src="@drawable/ic_self_improvement"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/orange" />
+
+                <TextView
+                    android:id="@+id/title_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/s_margin"
+                    android:layout_marginTop="@dimen/s_margin"
+                    android:text="@string/welcome_title"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/text_title_size"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@id/logo" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/s_margin"
+                    android:layout_marginTop="@dimen/s_margin"
+                    android:paddingBottom="@dimen/l_margin"
+                    android:text="@string/welcome_description"
+                    android:textSize="@dimen/text_description_size"
+                    app:layout_constraintTop_toBottomOf="@id/title_tv" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <Button
+            android:id="@+id/understand_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context=".presentation.fragments.WelcomeFragment">
+            android:layout_marginHorizontal="@dimen/s_margin"
+            android:paddingVertical="@dimen/xs_padding"
+            android:text="@string/understand"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
-            <ImageView
-                android:id="@+id/logo"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/welcome_logo_height"
-                android:layout_marginTop="@dimen/s_margin"
-                android:contentDescription="@string/welcome_logo_description"
-                android:src="@drawable/ic_self_improvement"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/orange" />
+    </LinearLayout>
 
-            <TextView
-                android:id="@+id/title_tv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/s_margin"
-                android:layout_marginTop="@dimen/s_margin"
-                android:text="@string/welcome_title"
-                android:textAlignment="center"
-                android:textSize="@dimen/text_title_size"
-                android:textStyle="bold"
-                app:layout_constraintTop_toBottomOf="@id/logo" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/s_margin"
-                android:layout_marginTop="@dimen/s_margin"
-                android:paddingBottom="@dimen/l_margin"
-                android:text="@string/welcome_description"
-                android:textSize="@dimen/text_description_size"
-                app:layout_constraintTop_toBottomOf="@id/title_tv" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.core.widget.NestedScrollView>
-
-    <Button
-        android:id="@+id/understand_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/s_margin"
-        android:paddingVertical="@dimen/xs_padding"
-        android:text="@string/understand"
-        app:layout_constraintBottom_toBottomOf="parent" />
-
-</LinearLayout>
+</layout>
