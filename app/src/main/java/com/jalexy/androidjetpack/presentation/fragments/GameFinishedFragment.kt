@@ -5,42 +5,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.OnBackPressedCallback
-import androidx.fragment.app.FragmentManager
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.jalexy.androidjetpack.R
 import com.jalexy.androidjetpack.databinding.FragmentGameFinishedBinding
 import com.jalexy.androidjetpack.domain.models.GameResult
 
 class GameFinishedFragment : Fragment() {
 
-    companion object {
-
-        private const val KEY_GAME_RESULT = "game_result"
-
-        fun newInstance(result: GameResult): GameFinishedFragment =
-            GameFinishedFragment().apply {
-                arguments = Bundle().apply {
-                    putParcelable(KEY_GAME_RESULT, result)
-                }
-            }
-    }
-
     private var _binding: FragmentGameFinishedBinding? = null
     private val binding: FragmentGameFinishedBinding
         get() = _binding ?: throw RuntimeException("FragmentGameFinishedBinding is null")
 
-    private lateinit var result: GameResult
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        parseArgs()
-    }
-
-    private fun parseArgs() {
-        requireArguments().getParcelable<GameResult>(KEY_GAME_RESULT)?.let{
-            result = it
-        }
-    }
+    private val args by navArgs<GameFinishedFragmentArgs>()
+    private val result: GameResult by lazy { args.gameResult }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -57,22 +35,13 @@ class GameFinishedFragment : Fragment() {
     }
 
     private fun setupClickListeners() {
-        requireActivity().onBackPressedDispatcher
-            .addCallback(
-                viewLifecycleOwner,
-                object : OnBackPressedCallback(true) {
-                    override fun handleOnBackPressed() {
-                        retryGame()
-                    }
-                })
         binding.retryBtn.setOnClickListener {
             retryGame()
         }
     }
 
     private fun retryGame() {
-        requireActivity().supportFragmentManager
-            .popBackStack(GameFragment.NAME, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+       findNavController().popBackStack()
     }
 
     private fun bindView() {

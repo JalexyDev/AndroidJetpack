@@ -5,18 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.jalexy.androidjetpack.R
+import androidx.navigation.fragment.findNavController
 import com.jalexy.androidjetpack.databinding.FragmentChooseLevelBinding
 import com.jalexy.androidjetpack.domain.models.Level
 
 class ChooseLevelFragment : Fragment() {
-
-    companion object {
-
-        fun newInstance(): ChooseLevelFragment {
-            return ChooseLevelFragment()
-        }
-    }
 
     private var _binding: FragmentChooseLevelBinding? = null
     private val binding: FragmentChooseLevelBinding
@@ -51,11 +44,10 @@ class ChooseLevelFragment : Fragment() {
     }
 
     private fun startGameFragment(level: Level) {
-        requireActivity().supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.main_container, GameFragment.newInstance(level))
-            .addToBackStack(GameFragment.NAME)
-            .commit()
+        findNavController().navigate(
+            ChooseLevelFragmentDirections
+                .actionChooseLevelFragmentToGameFragment(level)
+        )
     }
 
     override fun onDestroyView() {
